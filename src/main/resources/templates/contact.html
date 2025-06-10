@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="${title}">연락처</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="stylesheet" th:href="@{/css/responsive.css}">
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">
+      <h1>Spring 반응형 웹</h1>
+    </div>
+    <nav>
+      <div class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul class="nav-menu">
+        <li><a th:href="@{/}">홈</a></li>
+        <li><a th:href="@{/about}">소개</a></li>
+        <li><a th:href="@{/services}">서비스</a></li>
+        <li><a th:href="@{/contact}" class="active">연락처</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-content">
+      <h2>연락처</h2>
+      <p>궁금한 점이 있으시면 연락해 주세요.</p>
+
+      <div class="contact-container">
+        <div class="contact-form">
+          <h3>메시지 보내기</h3>
+          <form>
+            <div class="form-group">
+              <label for="name">이름</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">이메일</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">메시지</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn">보내기</button>
+          </form>
+        </div>
+        <div class="contact-info">
+          <h3>연락처 정보</h3>
+          <p><strong>주소:</strong> 경기도 시흥시 서해안로 242</p>
+          <p><strong>이메일:</strong> jismold2@naver.com</p>
+          <p><strong>전화:</strong> 010-4223-0919</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Copyright 2025. JSES. All rights reserved.</p>
+  </footer>
+</div>
+
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

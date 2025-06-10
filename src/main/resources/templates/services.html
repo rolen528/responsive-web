@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">서비스</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/responsive.css}">
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="logo">
+            <h1>Spring 반응형 웹</h1>
+        </div>
+        <nav>
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-menu">
+                <li><a th:href="@{/}">홈</a></li>
+                <li><a th:href="@{/about}">소개</a></li>
+                <li><a th:href="@{/services}" class="active">서비스</a></li>
+                <li><a th:href="@{/contact}">연락처</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-content">
+            <h2>제공 서비스</h2>
+            <p>저희는 다양한 웹 개발 서비스를 제공합니다.</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>웹 애플리케이션 개발</h3>
+                    <p>Spring Boot를 활용한 확장 가능한 웹 애플리케이션 개발</p>
+                </div>
+                <div class="service-card">
+                    <h3>반응형 웹 디자인</h3>
+                    <p>모든 디바이스에 최적화된 사용자 친화적인 디자인</p>
+                </div>
+                <div class="service-card">
+                    <h3>API 개발</h3>
+                    <p>RESTful API 설계 및 구현</p>
+                </div>
+                <div class="service-card">
+                    <h3>데이터베이스 설계</h3>
+                    <p>효율적인 데이터 구조 설계 및 구현</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Spring 반응형 웹 애플리케이션. All rights reserved.</p>
+    </footer>
+</div>
+
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

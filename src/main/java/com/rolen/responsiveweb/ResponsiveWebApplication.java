@@ -9,5 +9,4 @@ public class ResponsiveWebApplication {
     public static void main(String[] args) {
         SpringApplication.run(ResponsiveWebApplication.class, args);
     }
-
 }

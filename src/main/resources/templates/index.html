@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Boot 반응형 웹</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/responsive.css}">
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="logo">
+            <h1>Spring 반응형 웹</h1>
+        </div>
+        <nav>
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-menu">
+                <li><a th:href="@{/}" class="active">홈</a></li>
+                <li><a th:href="@{/about}">소개</a></li>
+                <li><a th:href="@{/services}">서비스</a></li>
+                <li><a th:href="@{/contact}">연락처</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2 th:text="${message}">환영합니다!</h2>
+            <p>모든 디바이스에 최적화된 반응형 웹 디자인입니다.</p>
+            <button class="btn">시작하기</button>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>반응형 디자인</h3>
+                <p>모든 화면 크기에 맞게 조정되는 레이아웃</p>
+            </div>
+            <div class="feature-card">
+                <h3>Spring Boot</h3>
+                <p>빠른 개발을 위한 강력한 프레임워크</p>
+            </div>
+            <div class="feature-card">
+                <h3>현대적인 UI</h3>
+                <p>사용자 친화적인 인터페이스 디자인</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Spring 반응형 웹 애플리케이션. All rights reserved.</p>
+    </footer>
+</div>
+
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>
