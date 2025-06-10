@@ -3,9 +3,17 @@ package com.rolen.responsiveweb.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import com.rolen.responsiveweb.entity.FileEntity;
+import com.rolen.responsiveweb.repository.FileRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MainController {
+    @Autowired
+    private FileRepository fileRepository;
 
     @GetMapping("/")
     public String home(Model model) {
@@ -30,4 +38,12 @@ public class MainController {
         model.addAttribute("title", "연락처 페이지");
         return "contact";
     }
+
+//    @GetMapping("/files") FileController에서 처리
+//    public String files(Model model) {
+//        model.addAttribute("title", "파일 관리");
+//        model.addAttribute("files", fileRepository.findAll());
+//        return "files";
+//    }
+
 }

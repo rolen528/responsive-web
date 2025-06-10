@@ -241,3 +241,46 @@ footer {
     margin-top: 40px;
     color: #586069;
 }
+
+.file-section {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.upload-form {
+    margin-bottom: 2rem;
+}
+
+.file-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.file-list th,
+.file-list td {
+    padding: 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.file-list th {
+    background-color: #f5f5f5;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">파일 관리</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/responsive.css}">
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="logo">
+            <h1>JSES</h1>
+        </div>
+        <nav>
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-menu">
+                <li><a th:href="@{/}">홈</a></li>
+                <li><a th:href="@{/about}">소개</a></li>
+                <li><a th:href="@{/services}">서비스</a></li>
+                <li><a th:href="@{/contact}">연락처</a></li>
+                <li><a th:href="@{/files}" class="active">파일관리</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-content">
+            <h2>파일 관리</h2>
+            <p>파일을 업로드하고 다운로드할 수 있습니다.</p>
+
+            <div class="file-section">
+                <div class="upload-form">
+                    <h3>파일 업로드</h3>
+                    <form action="/files/upload" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="file">파일 선택</label>
+                            <input type="file" id="file" name="file" required>
+                        </div>
+                        <button type="submit" class="button">업로드</button>
+                    </form>
+                </div>
+
+                <div class="file-list">
+                    <h3>업로드된 파일 목록</h3>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>파일명</th>
+                            <th>크기</th>
+                            <th>업로드 일자</th>
+                            <th>작업</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="file : ${files}">
+                            <td th:text="${file.originalFilename}"></td>
+                            <td th:text="${#numbers.formatDecimal(file.size/1024, 0, 2) + ' KB'}"></td>
+                            <td th:text="${#temporals.format(file.uploadDate, 'yyyy-MM-dd HH:mm')}"></td>
+                            <td>
+                                <a th:href="@{/files/download/{id}(id=${file.id})}" class="button">다운로드</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Copyright 2025. JSES. All rights reserved.</p>
+    </footer>
+</div>
+
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>
